@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Café de Lune</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-brown navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <i class="fas fa-moon me-2"></i>
+      <span class="fw-bold">Café de Lune</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">
+            <i class="fas fa-home me-1"></i> Giới thiệu
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#menu">
+            <i class="fas fa-coffee me-1"></i> Menu
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gallery">
+            <i class="fas fa-images me-1"></i> Không gian
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#reviews">
+            <i class="fas fa-star me-1"></i> Đánh giá
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#news">
+            <i class="fas fa-newspaper me-1"></i> Tin tức
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#booking">
+            <i class="fas fa-calendar-alt me-1"></i> Đặt bàn
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">
+            <i class="fas fa-envelope me-1"></i> Liên hệ
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- About -->
+<section id="about" class="py-5" data-aos="fade-up">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="images/hero_bg.jpg" alt="Café de Lune Interior" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="display-4 mb-4">Café de Lune</h2>
+        <p class="lead mb-4">Nơi gặp gỡ của những tâm hồn yêu cà phê và nghệ thuật sống chậm.</p>
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-coffee me-3 text-brown"></i>
+              <div>
+                <h5 class="mb-0">Cà phê đặc sản</h5>
+                <p class="text-muted mb-0">100% hạt Arabica</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex align-items-center mb-3">
+              <i class="fas fa-clock me-3 text-brown"></i>
+              <div>
+                <h5 class="mb-0">Giờ mở cửa</h5>
+                <p class="text-muted mb-0">7:00 - 22:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="mb-4">Tọa lạc tại trung tâm thành phố, Café de Lune mang đến không gian thư thái với thiết kế hiện đại kết hợp nét cổ điển. Chúng tôi tự hào phục vụ những ly cà phê thơm ngon nhất, được chọn lọc từ những hạt cà phê chất lượng cao.</p>
+        <a href="#menu" class="btn btn-brown">Xem Menu</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Menu -->
+<section id="menu" class="py-5 bg-light" data-aos="fade-up">
+  <div class="container">
+    <h2 class="display-4 text-center mb-5 text-brown">Menu</h2>
+    
+    <!-- Menu Categories -->
+    <ul class="nav nav-pills justify-content-center mb-4" id="menuTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active btn-light" id="coffee-tab" data-bs-toggle="pill" data-bs-target="#coffee" type="button">Cà Phê</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link btn-light" id="tea-tab" data-bs-toggle="pill" data-bs-target="#tea" type="button">Trà</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link btn-light" id="dessert-tab" data-bs-toggle="pill" data-bs-target="#dessert" type="button">Bánh Ngọt</button>
+      </li>
+    </ul>
+
+    <!-- Menu Content -->
+    <div class="tab-content" id="menuTabsContent">
+      <!-- Coffee Section -->
+      <div class="tab-pane fade show active" id="coffee" role="tabpanel">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <img src="images/menu/coffee1.jpg" class="card-img-top" alt="Café Đen">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="card-title mb-0 text-brown">Café Đen</h5>
+                  <span class="text-brown fw-bold">30.000đ</span>
+                </div>
+                <p class="card-text text-muted">Cà phê đen truyền thống, đậm đà hương vị</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <img src="images/menu/coffee-milk.jpg" class="card-img-top" alt="Café Sữa">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="card-title mb-0 text-brown">Café Sữa</h5>
+                  <span class="text-brown fw-bold">35.000đ</span>
+                </div>
+                <p class="card-text text-muted">Cà phê đen với sữa đặc, ngọt ngào</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <img src="images/menu/latte.jpg" class="card-img-top" alt="Latte">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="card-title mb-0 text-brown">Latte</h5>
+                  <span class="text-brown fw-bold">45.000đ</span>
+                </div>
+                <p class="card-text text-muted">Espresso với sữa nóng và bọt sữa mịn</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <img src="images/menu/cappuccino.jpg" class="card-img-top" alt="Cappuccino">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="card-title mb-0 text-brown">Cappuccino</h5>
+                  <span class="text-brown fw-bold">45.000đ</span>
+                </div>
+                <p class="card-text text-muted">Espresso với sữa nóng và bọt sữa dày</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tea Section -->
+      <div class="tab-pane fade" id="tea" role="tabpanel">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <img src="images/menu/jasmine-tea.jpg" class="card-img-top" alt="Trà Hoa Nhài">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="card-title mb-0 text-brown">Trà Hoa Nhài</h5>
+                  <span class="text-brown fw-bold">40.000đ</span>
+                </div>
+                <p class="card-text text-muted">Trà xanh với hương hoa nhài thơm ngát</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <img src="images/menu/peach-tea.jpg" class="card-img-top" alt="Trà Đào">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="card-title mb-0 text-brown">Trà Đào</h5>
+                  <span class="text-brown fw-bold">45.000đ</span>
+                </div>
+                <p class="card-text text-muted">Trà đen với đào tươi và mật ong</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <img src="images/menu/bubble-tea.jpg" class="card-img-top" alt="Trà Sữa Trân Châu">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="card-title mb-0 text-brown">Trà Sữa Trân Châu</h5>
+                  <span class="text-brown fw-bold">50.000đ</span>
+                </div>
+                <p class="card-text text-muted">Trà sữa đặc biệt với trân châu đường đen</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dessert Section -->
+      <div class="tab-pane fade" id="dessert" role="tabpanel">
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <img src="images/menu/tiramisu.jpg" class="card-img-top" alt="Tiramisu">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="card-title mb-0 text-brown">Tiramisu</h5>
+                  <span class="text-brown fw-bold">55.000đ</span>
+                </div>
+                <p class="card-text text-muted">Bánh kem cà phê kiểu Ý</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <img src="images/menu/cheesecake.jpg" class="card-img-top" alt="Cheesecake">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="card-title mb-0 text-brown">Cheesecake</h5>
+                  <span class="text-brown fw-bold">50.000đ</span>
+                </div>
+                <p class="card-text text-muted">Bánh kem phô mai mềm mịn</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <img src="images/menu/chocolate-cake.jpg" class="card-img-top" alt="Chocolate Cake">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h5 class="card-title mb-0 text-brown">Chocolate Cake</h5>
+                  <span class="text-brown fw-bold">45.000đ</span>
+                </div>
+                <p class="card-text text-muted">Bánh chocolate đậm đà</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" class="py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="display-4 text-center mb-5 text-brown">Không Gian</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/space1.jpg" class="card-img-top" alt="Không gian chính">
+          <div class="card-body">
+            <h5 class="card-title text-brown">Không Gian Chính</h5>
+            <p class="card-text text-muted">Không gian rộng rãi, thoáng đãng với ánh sáng tự nhiên</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/space2.jpg" class="card-img-top" alt="Góc làm việc">
+          <div class="card-body">
+            <h5 class="card-title text-brown">Góc Làm Việc</h5>
+            <p class="card-text text-muted">Không gian yên tĩnh, lý tưởng cho công việc và học tập</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="images/space3.jpg" class="card-img-top" alt="Góc thư giãn">
+          <div class="card-body">
+            <h5 class="card-title text-brown">Góc Thư Giãn</h5>
+            <p class="card-text text-muted">Không gian ấm cúng với sofa êm ái</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100">
+          <img src="images/space4.jpg" class="card-img-top" alt="Quầy bar">
+          <div class="card-body">
+            <h5 class="card-title text-brown">Quầy Bar</h5>
+            <p class="card-text text-muted">Nơi các barista tài năng pha chế những ly cà phê thơm ngon</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100">
+          <img src="images/space5.jpg" class="card-img-top" alt="Không gian ngoài trời">
+          <div class="card-body">
+            <h5 class="card-title text-brown">Không Gian Ngoài Trời</h5>
+            <p class="card-text text-muted">Sân vườn xanh mát, lý tưởng cho những buổi chiều thư thái</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="py-5" data-aos="fade-up">
+  <div class="container text-center">
+    <h2 class="display-4 text-center mb-5 text-brown">Đánh Giá Khách Hàng</h2>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="card review-card h-100">
+          <div class="card-body">
+            <div class="review-img-container mb-4">
+              <img src="images/customer1.jpg" class="rounded-circle" alt="Minh Anh">
+            </div>
+            <div class="stars mb-3">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+            </div>
+            <blockquote class="review-text">"Không gian ấm cúng, cà phê ngon! Tôi thích cách phục vụ tận tình của nhân viên tại đây."</blockquote>
+            <div class="reviewer-info mt-4">
+              <h5 class="mb-1">Minh Anh</h5>
+              <p class="text-muted mb-0">Khách hàng thân thiết</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card review-card h-100">
+          <div class="card-body">
+            <div class="review-img-container mb-4">
+              <img src="images/customer2.jpg" class="rounded-circle" alt="Hải Đăng">
+            </div>
+            <div class="stars mb-3">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+            </div>
+            <blockquote class="review-text">"Yêu cách phục vụ tại đây! Barista rất chuyên nghiệp và am hiểu về cà phê."</blockquote>
+            <div class="reviewer-info mt-4">
+              <h5 class="mb-1">Hải Đăng</h5>
+              <p class="text-muted mb-0">Barista chuyên nghiệp</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card review-card h-100">
+          <div class="card-body">
+            <div class="review-img-container mb-4">
+              <img src="images/customer3.jpg" class="rounded-circle" alt="Thùy Linh">
+            </div>
+            <div class="stars mb-3">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+            </div>
+            <blockquote class="review-text">"Một nơi lý tưởng để làm việc! Wifi ổn định, không gian yên tĩnh và cà phê ngon."</blockquote>
+            <div class="reviewer-info mt-4">
+              <h5 class="mb-1">Thùy Linh</h5>
+              <p class="text-muted mb-0">Freelancer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section id="news" class="py-5 bg-light" data-aos="fade-up">
+  <div class="container">
+    <h2 class="display-4 text-center mb-5 text-brown">Tin Tức & Sự Kiện</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card news-card h-100">
+          <div class="news-img-container">
+            <img src="images/event1.jpg" class="card-img-top" alt="Workshop Espresso">
+            <div class="news-date">
+              <span class="day">15</span>
+              <span class="month">Tháng 5</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-brown">Workshop: Pha chế Espresso</h5>
+            <p class="card-text">Tham gia ngay ngày 15/5 để học cách pha Espresso chuẩn Ý. Workshop sẽ được hướng dẫn bởi các barista chuyên nghiệp.</p>
+            <a href="#" class="btn btn-outline-brown mt-3">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card news-card h-100">
+          <div class="news-img-container">
+            <img src="images/event2.jpg" class="card-img-top" alt="Cuộc thi Barista">
+            <div class="news-date">
+              <span class="day">20</span>
+              <span class="month">Tháng 5</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-brown">Cuộc thi Barista</h5>
+            <p class="card-text">Thi tài năng pha chế – giải thưởng hấp dẫn! Cơ hội để thể hiện kỹ năng và nhận giải thưởng giá trị.</p>
+            <a href="#" class="btn btn-outline-brown mt-3">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card news-card h-100">
+          <div class="news-img-container">
+            <img src="images/event3.jpg" class="card-img-top" alt="Khuyến mãi đặc biệt">
+            <div class="news-date">
+              <span class="day">25</span>
+              <span class="month">Tháng 5</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-brown">Khuyến mãi đặc biệt</h5>
+            <p class="card-text">Giảm giá 20% cho tất cả các loại cà phê vào cuối tuần. Đừng bỏ lỡ cơ hội thưởng thức cà phê ngon với giá hấp dẫn.</p>
+            <a href="#" class="btn btn-outline-brown mt-3">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking -->
+<section id="booking" class="py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="display-4 text-center mb-5 text-brown">Đặt Bàn</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="booking-info text-center mb-5">
+          <div class="row">
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div class="booking-info-item">
+                <i class="fas fa-clock text-brown mb-3"></i>
+                <h5>Giờ Mở Cửa</h5>
+                <p class="mb-0">7:00 - 22:00</p>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div class="booking-info-item">
+                <i class="fas fa-phone text-brown mb-3"></i>
+                <h5>Đặt Bàn Qua Điện Thoại</h5>
+                <p class="mb-0">0123 456 789</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="booking-info-item">
+                <i class="fas fa-users text-brown mb-3"></i>
+                <h5>Sức Chứa</h5>
+                <p class="mb-0">Tối đa 8 người/bàn</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="booking-form-container">
+          <form class="booking-form">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="name" class="form-label">Họ và tên</label>
+                  <input type="text" class="form-control" id="name" required>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="phone" class="form-label">Số điện thoại</label>
+                  <input type="tel" class="form-control" id="phone" required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="date" class="form-label">Ngày</label>
+                  <input type="date" class="form-control" id="date" required>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="time" class="form-label">Giờ</label>
+                  <input type="time" class="form-control" id="time" required>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="guests" class="form-label">Số người</label>
+                  <select class="form-select" id="guests" required>
+                    <option value="">Chọn số người</option>
+                    <option value="1">1 người</option>
+                    <option value="2">2 người</option>
+                    <option value="3">3 người</option>
+                    <option value="4">4 người</option>
+                    <option value="5">5 người</option>
+                    <option value="6">6 người</option>
+                    <option value="7">7 người</option>
+                    <option value="8">8 người</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="occasion" class="form-label">Dịp đặc biệt</label>
+                  <select class="form-select" id="occasion">
+                    <option value="">Không có</option>
+                    <option value="birthday">Sinh nhật</option>
+                    <option value="anniversary">Kỷ niệm</option>
+                    <option value="business">Họp mặt công việc</option>
+                    <option value="other">Khác</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-4">
+              <label for="notes" class="form-label">Ghi chú thêm</label>
+              <textarea class="form-control" id="notes" rows="3" placeholder="Nhập yêu cầu đặc biệt hoặc ghi chú..."></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-brown btn-lg px-5">Đặt Bàn Ngay</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact + Footer -->
+<section id="contact" class="py-5 bg-light" data-aos="fade-up">
+  <div class="container">
+    <h2 class="display-4 text-center mb-5 text-brown">Liên Hệ</h2>
+    <div class="row">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="contact-info">
+          <div class="contact-item mb-4">
+            <i class="fas fa-map-marker-alt text-brown mb-3"></i>
+            <h5>Địa Chỉ</h5>
+            <p>123 Đường Ánh Trăng, Quận 1, Hà Nội</p>
+          </div>
+          <div class="contact-item mb-4">
+            <i class="fas fa-phone text-brown mb-3"></i>
+            <h5>Điện Thoại</h5>
+            <p>0123 456 789</p>
+          </div>
+          <div class="contact-item mb-4">
+            <i class="fas fa-envelope text-brown mb-3"></i>
+            <h5>Email</h5>
+            <p>info@cafedelune.com</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock text-brown mb-3"></i>
+            <h5>Giờ Mở Cửa</h5>
+            <p>Thứ 2 - Thứ 6: 7:00 - 22:00</p>
+            <p>Thứ 7 - Chủ Nhật: 8:00 - 23:00</p>
+          </div>
+          <div class="social-links mt-4">
+            <a href="#" class="btn btn-outline-brown me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="btn btn-outline-brown me-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-outline-brown"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="contact-form-container">
+          <form class="contact-form">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Họ và tên</label>
+                  <input type="text" class="form-control" id="contact-name" required>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="contact-email" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <label for="contact-subject" class="form-label">Tiêu đề</label>
+              <input type="text" class="form-control" id="contact-subject" required>
+            </div>
+            <div class="form-group mb-4">
+              <label for="contact-message" class="form-label">Nội dung</label>
+              <textarea class="form-control" id="contact-message" rows="5" required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-brown btn-lg px-5">Gửi Tin Nhắn</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="map-container mt-5">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.0964843003007!2d105.78159831531967!3d21.02881678599471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab3b4220c2bd%3A0x1c9e359e2a4f618c!2zMTIzIMSQxrDhu51uZyBBbmggVHLhuqVuZywgVOG7qyBMacOqbSwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1625123456789!5m2!1sen!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-brown text-light py-4 text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5 class="mb-3">Café de Lune</h5>
+        <p class="mb-0">Nơi gặp gỡ của những tâm hồn yêu cà phê và nghệ thuật sống chậm.</p>
+      </div>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <h5 class="mb-3">Liên Kết Nhanh</h5>
+        <ul class="list-unstyled">
+          <li><a href="#about" class="text-light">Giới thiệu</a></li>
+          <li><a href="#menu" class="text-light">Menu</a></li>
+          <li><a href="#booking" class="text-light">Đặt bàn</a></li>
+          <li><a href="#contact" class="text-light">Liên hệ</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5 class="mb-3">Theo Dõi Chúng Tôi</h5>
+        <div class="social-links">
+          <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4">
+    <p class="mb-0">© 2025 Café de Lune. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<!-- Custom JS -->
+<script src="script.js"></script>
+</body>
+</html>
