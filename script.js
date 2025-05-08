@@ -4,6 +4,24 @@ AOS.init({
   once: true
 });
 
+// Form Validation
+function validateForm(form) {
+  if (!form.checkValidity()) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  form.classList.add('was-validated');
+}
+
+// Add form validation listeners
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+  validateForm(this);
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  validateForm(this);
+});
+
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
   const navbar = document.querySelector('.navbar');
@@ -20,9 +38,13 @@ window.addEventListener('scroll', function() {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   });
 });
 
@@ -35,11 +57,15 @@ menuTabs.forEach(tab => {
   });
 });
 
-// Form validation and animation
+// Form submission handling
 const forms = document.querySelectorAll('form');
 forms.forEach(form => {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
+    
+    if (!this.checkValidity()) {
+      return;
+    }
     
     // Add loading animation to submit button
     const submitBtn = this.querySelector('button[type="submit"]');
@@ -55,6 +81,7 @@ forms.forEach(form => {
       // Reset form after 2 seconds
       setTimeout(() => {
         form.reset();
+        form.classList.remove('was-validated');
         submitBtn.innerHTML = originalText;
         submitBtn.classList.remove('btn-success');
         submitBtn.disabled = false;
@@ -63,7 +90,7 @@ forms.forEach(form => {
   });
 });
 
-// Image hover effect
+// Image hover effect with error handling
 const cards = document.querySelectorAll('.card');
 cards.forEach(card => {
   card.addEventListener('mouseenter', function() {
@@ -74,6 +101,14 @@ cards.forEach(card => {
   card.addEventListener('mouseleave', function() {
     this.style.transform = 'translateY(0)';
     this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
+  });
+});
+
+// Image error handling
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('error', function() {
+    this.src = 'images/placeholder.jpg';
+    this.alt = 'Hình ảnh không khả dụng';
   });
 });
 
@@ -113,6 +148,7 @@ document.querySelectorAll('.counter').forEach(counter => {
 const backToTopBtn = document.createElement('button');
 backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
 backToTopBtn.className = 'back-to-top';
+backToTopBtn.setAttribute('aria-label', 'Về đầu trang');
 document.body.appendChild(backToTopBtn);
 
 window.addEventListener('scroll', () => {
@@ -152,6 +188,16 @@ style.textContent = `
   .back-to-top:hover {
     background-color: var(--brown-light);
     transform: translateY(-3px);
+  }
+  
+  .was-validated .form-control:invalid,
+  .was-validated .form-select:invalid {
+    border-color: #dc3545;
+  }
+  
+  .was-validated .form-control:valid,
+  .was-validated .form-select:valid {
+    border-color: #198754;
   }
 `;
 document.head.appendChild(style); 
